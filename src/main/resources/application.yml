@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: prod
+    include:
+      - kafka
+  kafka:
+    broker.hosts: 127.0.0.1:9092
+    # zkHost
+    zk.hosts:
+    ############ consumer ##########
+    # 自动提交offset
+    consumer.enable.auto.commit: false
+    # 客户端会话超时时间
+    consumer.session.timeout: 60000
+    # kafka批量提交大小
+    consumer.auto.commit.interval: 10
+    # 无提交offset时从最新的位置开始消费
+    consumer.auto.offset.reset: latest
+    # 消费者并发消费线程数
+    consumer.concurrency: 1
+    ############ producer #######
+    producer.retries: 3
+    # 消息批量发送大小
+    producer.batch.size: 4096000
+    # 在消息批量发送前等待其他其他消息加入的时间
+    producer.linger: 1
+    # 消息发送内存buffer大小
+    producer.buffer.memory: 4096000
