@@ -28,7 +28,7 @@ public class IndexController {
     @PostMapping("/test")
     public String test (@RequestBody JSONObject jsonObject) {
 
-        return "OK";
+        return "OK--client api";
     }
 
 }
