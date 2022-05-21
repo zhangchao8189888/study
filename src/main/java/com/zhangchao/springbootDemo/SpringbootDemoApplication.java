@@ -3,10 +3,13 @@ package com.zhangchao.springbootDemo;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import java.util.Map;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@EnableEurekaClient
 public class SpringbootDemoApplication {
 
 	public static void main(String[] args) {
